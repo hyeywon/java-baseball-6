@@ -16,10 +16,32 @@ public class Computer {
         }
     }
 
-    public String check(List<Integer> ans) {
+    public String check(List<Integer> input) {
+        int ball = 0, strike = 0;
+
+        for (int i = 0; i < input.size(); i++) {
+            if (input.get(i).equals(answer.get(i))) {
+                strike++;
+            } else if (answer.contains(input.get(i))) {
+                ball++;
+            }
+        }
+        return result(ball, strike);
+    }
+
+    private String result(int ball, int strike) {
         String result = "";
-        // TODO
-        return result;
+
+        if (strike == 0 && ball == 0) {
+            return "낫싱";
+        }
+        if (strike == 0) {
+            result += ball + "볼 ";
+        }
+        if (ball == 0) {
+            result += strike + "스트라이크";
+        }
+        return result.trim();
     }
 
     public void clear() {
