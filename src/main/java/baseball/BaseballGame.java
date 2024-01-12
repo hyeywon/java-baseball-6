@@ -11,6 +11,7 @@ public class BaseballGame {
         String result;
         do {
             result = attempt();
+            System.out.println(result);
         } while (!result.equals("3스트라이크"));
 
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
@@ -21,7 +22,7 @@ public class BaseballGame {
     }
 
     private String attempt() {
-        System.out.println("숫자를 입력해주세요 : ");
+        System.out.print("숫자를 입력해주세요 : ");
         List<Integer> answer = validate.answer(Console.readLine());
         return computer.check(answer);
     }

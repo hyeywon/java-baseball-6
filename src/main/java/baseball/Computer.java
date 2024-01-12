@@ -35,10 +35,10 @@ public class Computer {
         if (strike == 0 && ball == 0) {
             return "낫싱";
         }
-        if (strike == 0) {
+        if (ball != 0) {
             result += ball + "볼 ";
         }
-        if (ball == 0) {
+        if (strike != 0) {
             result += strike + "스트라이크";
         }
         return result.trim();
